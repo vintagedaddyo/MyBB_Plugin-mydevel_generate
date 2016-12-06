@@ -1,0 +1,28 @@
+1.0
+ - First release
+
+1.1
+ - The plugin can now be used by all the administrators and not only the user with user id #1
+ - Added more words to the dictionary
+ - Optimized random seeder
+ - Code clean up
+
+Compatibility: 1.6.*, 1.8*
+
+1.2
+— admincp submenu "is missing" issue fixed in plugin file
+— basic updated version compatibility to 18* in plugin file
+— added Upload/inc/plugins folder in distribution package
+— added documentation folder in distribution package
+— added license text to documentation folder
+— added plugin info to documentation folder add info for example like: "The password for all generated users is: devel123"
+— Updated changelog to reflect 1.2 basic update
+— repackaged
+— after finding on github.., added Omars changes
+— Updated package to add old_plugin_files folder in Documentation keeping track of minor file changes
+— repackaged
+— Updated package to add images/avatars folder from 1.6.x
+— repackaged
+
+* Just a rather basic update that appears to at least be working for my basic needs..., so I figured why not share it
+* noticed after the fact that Omar had made some changes as well..., so updated to add those as well..., 

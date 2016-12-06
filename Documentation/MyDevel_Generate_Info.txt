@@ -1,0 +1,33 @@
+MyDevel: Generate
+Generate users, threads and posts for development purposes.
+Authors: Aries-Belgium, Vintagedaddyo
+Submitted: 30th October 2010
+Last Updated: 22nd December 2010 *
+
+* Updated by: Vintagedaddyo on 11/25/2016
+
+This plugin is for development purposes only so I wouldn't recommend using this on a live site.
+
+This plugin generates random content and users to use during the development process of a plugin or theme instead of creating dummy content and users by hand.
+
+
+Users:
+- configurable amount
+- configurable random group per user
+- random avatar per user
+- standard password: devel123
+
+
+Threads:
+- configurable amount
+- configurable random forum or sub-forum
+- random user per thread
+- random post icon per thread
+
+
+Posts:
+- configurable amount
+- configurable random forum or sub-forum
+- random user per post
+- random post icon per post 
+

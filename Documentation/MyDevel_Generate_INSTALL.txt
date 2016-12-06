@@ -1,0 +1,3 @@
+1) Copy the mydevel_generate.php file to your inc/plugins folder.
+2) Enable the plugin the AdminCP
+3) Go to AdminCp > Configuration > Devel: Generate
