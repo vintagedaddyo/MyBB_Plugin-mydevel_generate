@@ -25,16 +25,26 @@ $plugins->add_hook('admin_load','mydevel_generate_admin_load');
 
 function mydevel_generate_info()
 {
-	return array(
-		"name"			=> "MyDevel: Generate",
-		"description"	=> "Generate users, threads and posts for development purposes.",
-		"website"		=> "http://mods.mybb.com/view/mydevel-generate",
-		"author"		=> "Aries-Belgium & updated by Vintagedaddyo",
-		"authorsite"	=> "mailto:aries.belgium@gmail.com",
-		"version"		=> "1.2",
-		"guid" 			=> "f16071e2b1e9bef5c2902fe2cb8acb63",
-		"compatibility" => "16*,18*"
-	);
+    global $lang;
+
+    $lang->load("mydevel_generate");
+    
+    $lang->mydevel_generate_Desc = '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="float:right;">' .
+        '<input type="hidden" name="cmd" value="_s-xclick">' . 
+        '<input type="hidden" name="hosted_button_id" value="AZE6ZNZPBPVUL">' .
+        '<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">' .
+        '<img alt="" border="0" src="https://www.paypalobjects.com/pl_PL/i/scr/pixel.gif" width="1" height="1">' .
+        '</form>' . $lang->mydevel_generate_Desc;
+
+    return Array(
+        'name' => $lang->mydevel_generate_Name,
+        'description' => $lang->mydevel_generate_Desc,
+        'website' => $lang->mydevel_generate_Web,
+        'author' => $lang->mydevel_generate_Auth,
+        'authorsite' => $lang->mydevel_generate_AuthSite,
+        'version' => $lang->mydevel_generate_Ver,
+        'compatibility' => $lang->mydevel_generate_Compat
+    );
 }
 
 //changed 
