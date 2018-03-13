@@ -8,7 +8,7 @@
  *
  * MyBB Version: 1.8
  *
- * Plugin Version: 1.2
+ * Plugin Version: 1.3
  * 
  */
 
@@ -50,10 +50,12 @@ function mydevel_generate_info()
 //changed 
 function mydevel_generate_admin_config_menu(&$sub_menu)
 {
-	global $mybb;
+	global $mybb, $lang;
+
+    $lang->load("mydevel_generate");
 	if(is_super_admin((int)$mybb->user['uid']))
 	{
-		$sub_menu['300'] = array("id" => "mydevel_generate", "title" => "Devel: Generate", "link" => "index.php?module=config-mydevel_generate");
+		$sub_menu['300'] = array("id" => "mydevel_generate", "title" => $lang->mydevel_generate_Name, "link" => "index.php?module=config-mydevel_generate");
 	}
 }
 
@@ -70,29 +72,31 @@ function mydevel_generate_admin_config_action_handler(&$actions)
 
 function mydevel_generate_admin_load()
 {	
-	global $mybb,$page;
+	global $mybb,$page, $lang;
+
+    $lang->load("mydevel_generate");
 	//changed
 	if(is_super_admin((int)$mybb->user['uid']) && $mybb->input['module'] == "config-mydevel_generate")
 	{
 		$sub_tabs = array(
 			"users" => array(
-				'title'=> "Users",
+				'title'=> $lang->mydevel_generate_Admin_Title_1,
 				'link' => 'index.php?module=config-mydevel_generate&amp;action=users',
-				'description' => "Generate users."
+				'description' => $lang->mydevel_generate_Admin_Description_1
 			),
 			"threads" => array(
-				'title' => "Threads",
+				'title' => $lang->mydevel_generate_Admin_Title_2,
 				'link' => 'index.php?module=config-mydevel_generate&amp;action=threads',
-				'description' => "Generate threads with posts in them."
+				'description' => $lang->mydevel_generate_Admin_Description_2
 			),
 			"posts" => array(
-				'title'=> "Posts",
+				'title'=> $lang->mydevel_generate_Admin_Title_3,
 				'link' => 'index.php?module=config-mydevel_generate&amp;action=posts',
-				'description' => "Generate posts within existing threads."
+				'description' => $lang->mydevel_generate_Admin_Description_3
 			),
 		);
 		
-		$page->add_breadcrumb_item("Devel: Generate","index.php?module=config-mydevel_generate");
+		$page->add_breadcrumb_item("$lang->mydevel_generate_Name","index.php?module=config-mydevel_generate");
 		
 		$page->output_header();
 		
@@ -139,7 +143,7 @@ function mydevel_generate_admin_load()
 					}
 					
 					$in_count = count(array_keys($in));
-					flash_message("Generated {$count} posts in {$in_count} threads.",'success');
+					flash_message("$lang->mydevel_generate_Admin_Notice_1 {$count} $lang->mydevel_generate_Admin_Notice_2  {$in_count} $lang->mydevel_generate_Admin_Notice_3",'success');
 					admin_redirect("index.php?module=config-mydevel_generate&amp;action=posts");
 				}
 				
@@ -147,37 +151,37 @@ function mydevel_generate_admin_load()
 				
 				$form = new Form("index.php?module=config-mydevel_generate&amp;action=posts","POST");
 				
-				$form_container = new FormContainer("Generate posts");
+				$form_container = new FormContainer("$lang->mydevel_generate_Admin_Form_Title_1");
 				
 				$form_container->output_row(
-					"Count",
-					"How many posts would you like to generate?",
+					"$lang->mydevel_generate_Admin_Title_4",
+					"$lang->mydevel_generate_Admin_Description_4",
 					$form->generate_text_box('count', "", array('id' => 'count')),
 					'count'
 				);
 				
 				$form_container->output_row(
-					"Forums",
-					"Select the forums in which you would like to generate the posts.",
+					"$lang->mydevel_generate_Admin_Title_5",
+					"$lang->mydevel_generate_Admin_Description_5",
 					$form->generate_forum_select('forum[]', "", array('id' => 'forum','multiple'=>true,'size'=>5)),
 					'forum'
 				);
 				
 				$form_container->output_row(
-					"Use random users",
-					"Do you want to use a different (random) user for each post?",
-					$form->generate_yes_no_radio('random_user','yes')
+					"$lang->mydevel_generate_Admin_Title_6",
+					"$lang->mydevel_generate_Admin_Description_6",
+					$form->generate_yes_no_radio('random_user','$lang->mydevel_generate_Admin_Yes_6','$lang->mydevel_generate_Admin_No_6')
 				);
 				
 				$form_container->output_row(
-					"Use random post icons",
-					"Do you want to use different (random) icons for each thread?",
-					$form->generate_yes_no_radio('random_icon','yes')
+					"$lang->mydevel_generate_Admin_Title_7",
+					"$lang->mydevel_generate_Admin_Description_7",
+					$form->generate_yes_no_radio('random_icon','$lang->mydevel_generate_Admin_Yes_7','$lang->mydevel_generate_Admin_No_7')
 				);
 				
 				$form_container->end();
 				
-				$buttons[] = $form->generate_submit_button("Generate");
+				$buttons[] = $form->generate_submit_button("$lang->mydevel_generate_Admin_Submit_Button_1");
 				$form->output_submit_wrapper($buttons);
 				
 				$form->end();
@@ -220,7 +224,7 @@ function mydevel_generate_admin_load()
 						}
 					}
 					
-					flash_message("Generated {$count} threads.",'success');
+					flash_message("$lang->mydevel_generate_Admin_Notice_1 {$count} $lang->mydevel_generate_Admin_Notice_3",'success');
 					admin_redirect("index.php?module=config-mydevel_generate&amp;action=threads");
 				}
 				
@@ -228,37 +232,37 @@ function mydevel_generate_admin_load()
 				
 				$form = new Form("index.php?module=config-mydevel_generate&amp;action=threads","POST");
 				
-				$form_container = new FormContainer("Generate threads");
+				$form_container = new FormContainer("$lang->mydevel_generate_Admin_Form_Title_2");
 				
 				$form_container->output_row(
-					"Count",
-					"How many threads would you like to generate?",
+					"$lang->mydevel_generate_Admin_Title_8",
+					"$lang->mydevel_generate_Admin_Description_8",
 					$form->generate_text_box('count', "", array('id' => 'count')),
 					'count'
 				);
 				
 				$form_container->output_row(
-					"Forums",
-					"Select the forums in which you would like to generate the threads in.",
+					"$lang->mydevel_generate_Admin_Title_9",
+					"$lang->mydevel_generate_Admin_Description_9",
 					$form->generate_forum_select('forum[]', "", array('id' => 'forum','multiple'=>true,'size'=>5)),
 					'forum'
 				);
 				
 				$form_container->output_row(
-					"Use random users",
-					"Do you want to use a different (random) user for each thread?",
-					$form->generate_yes_no_radio('random_user','yes')
+					"$lang->mydevel_generate_Admin_Title_10",
+					"$lang->mydevel_generate_Admin_Description_10",
+					$form->generate_yes_no_radio('random_user','$lang->mydevel_generate_Admin_Yes_10','$lang->mydevel_generate_Admin_No_10')
 				);
 				
 				$form_container->output_row(
-					"Use random post icons",
-					"Do you want to use different (random) icons for each thread?",
-					$form->generate_yes_no_radio('random_icon','yes')
+					"$lang->mydevel_generate_Admin_Title_11",
+					"$lang->mydevel_generate_Admin_Description_11",
+					$form->generate_yes_no_radio('random_icon','$lang->mydevel_generate_Admin_Yes_11','$lang->mydevel_generate_Admin_No_11')
 				);
 				
 				$form_container->end();
 				
-				$buttons[] = $form->generate_submit_button("Generate");
+				$buttons[] = $form->generate_submit_button("$lang->mydevel_generate_Admin_Submit_Button_2");
 				$form->output_submit_wrapper($buttons);
 				
 				$form->end();
@@ -299,7 +303,7 @@ function mydevel_generate_admin_load()
 						}
 					}
 					
-					flash_message("Generated {$count} users.",'success');
+					flash_message("$lang->mydevel_generate_Admin_Notice_1 {$count} $lang->mydevel_generate_Admin_Notice_4",'success');
 					admin_redirect("index.php?module=config-mydevel_generate&amp;action=users");
 				}
 				
@@ -307,31 +311,31 @@ function mydevel_generate_admin_load()
 				
 				$form = new Form("index.php?module=config-mydevel_generate&amp;action=users","POST");
 				
-				$form_container = new FormContainer("Generate threads");
+				$form_container = new FormContainer("$lang->mydevel_generate_Admin_Form_Title_3");
 				
 				$form_container->output_row(
-					"Count",
-					"How many threads would you like to generate?",
+					"$lang->mydevel_generate_Admin_Title_12",
+					"$lang->mydevel_generate_Admin_Description_12",
 					$form->generate_text_box('count', "", array('id' => 'count')),
 					'count'
 				);
 				
 				$form_container->output_row(
-					"Groups",
-					"Select the group(s) in which you would like to generate the users.",
+					"$lang->mydevel_generate_Admin_Title_13",
+					"$lang->mydevel_generate_Admin_Description_13",
 					$form->generate_group_select('group[]', "", array('id' => 'group','multiple'=>true,'size'=>5)),
 					'group'
 				);
 				
 				$form_container->output_row(
-					"Use random user avatars",
-					"Do you want to use different (random) avatars for each user?",
-					$form->generate_yes_no_radio('random_avatar','yes')
+					"$lang->mydevel_generate_Admin_Title_14",
+					"$lang->mydevel_generate_Admin_Description_14",
+					$form->generate_yes_no_radio('random_avatar','$lang->mydevel_generate_Admin_Yes_14','$lang->mydevel_generate_Admin_No_14')
 				);
 				
 				$form_container->end();
 				
-				$buttons[] = $form->generate_submit_button("Generate");
+				$buttons[] = $form->generate_submit_button("$lang->mydevel_generate_Admin_Submit_Button_3");
 				$form->output_submit_wrapper($buttons);
 				
 				$form->end();
