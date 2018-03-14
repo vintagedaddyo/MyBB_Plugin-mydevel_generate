@@ -92,12 +92,12 @@ $l['mydevel_generate_Admin_Submit_Button_2'] = 'Generar';
 
 //
 
-$l['mydevel_generate_Admin_Form_Title_3'] = 'Generar hilos';
+$l['mydevel_generate_Admin_Form_Title_3'] = 'Generar usarios';
 
 //
 
 $l['mydevel_generate_Admin_Title_12'] = 'Contar';
-$l['mydevel_generate_Admin_Description_12'] = '¿Cuántos hilos te gustaría generar?';
+$l['mydevel_generate_Admin_Description_12'] = '¿Cuántos usuarios te gustaría generar?';
 
 $l['mydevel_generate_Admin_Title_13'] = 'Grupos';
 $l['mydevel_generate_Admin_Description_13'] = 'Seleccione el grupo (s) en el que le gustaría generar los usuarios.';
@@ -106,7 +106,6 @@ $l['mydevel_generate_Admin_Title_14'] = 'Usa avatares de usuario aleatorio';
 $l['mydevel_generate_Admin_Description_14'] = '¿Desea usar avatares diferentes (aleatorios) para cada usuario?';
 $l['mydevel_generate_Admin_Yes_14'] = 'sí';
 $l['mydevel_generate_Admin_No_14'] = 'no';
-
 
 //
 

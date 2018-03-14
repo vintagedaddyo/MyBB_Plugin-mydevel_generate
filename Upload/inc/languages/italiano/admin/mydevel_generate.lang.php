@@ -91,12 +91,12 @@ $l['mydevel_generate_Admin_Submit_Button_2'] = 'creare';
 
 //
 
-$l['mydevel_generate_Admin_Form_Title_3'] = 'Genera discussioni';
+$l['mydevel_generate_Admin_Form_Title_3'] = 'Genera utenti';
 
 //
 
 $l['mydevel_generate_Admin_Title_12'] = 'Contare';
-$l['mydevel_generate_Admin_Description_12'] = 'Quante discussioni vorresti generare?';
+$l['mydevel_generate_Admin_Description_12'] = 'Quanti utenti vorresti generare?';
 
 $l['mydevel_generate_Admin_Title_13'] = 'gruppi';
 $l['mydevel_generate_Admin_Description_13'] = 'Seleziona il / i gruppo / i in cui desideri generare gli utenti.';
@@ -105,7 +105,6 @@ $l['mydevel_generate_Admin_Title_14'] = 'Usa avatar utente casuali';
 $l['mydevel_generate_Admin_Description_14'] = 'Vuoi utilizzare diversi avatar (casuali) per ogni utente?';
 $l['mydevel_generate_Admin_Yes_14'] = 'sì';
 $l['mydevel_generate_Admin_No_14'] = 'no';
-
 
 //
 

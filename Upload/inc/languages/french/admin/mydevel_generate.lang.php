@@ -92,12 +92,12 @@ $l['mydevel_generate_Admin_Submit_Button_2'] = 'produire';
 
 //
 
-$l['mydevel_generate_Admin_Form_Title_3'] = 'Générer des discussions';
+$l['mydevel_generate_Admin_Form_Title_3'] = 'Générer des utilisateurs';
 
 //
 
 $l['mydevel_generate_Admin_Title_12'] = 'Compter';
-$l['mydevel_generate_Admin_Description_12'] = 'Combien de threads aimeriez-vous générer?';
+$l['mydevel_generate_Admin_Description_12'] = 'Combien d utilisateurs aimeriez-vous générer?';
 
 $l['mydevel_generate_Admin_Title_13'] = 'Groupes';
 $l['mydevel_generate_Admin_Description_13'] = 'Sélectionnez le ou les groupes dans lesquels vous souhaitez générer les utilisateurs.';
@@ -106,7 +106,6 @@ $l['mydevel_generate_Admin_Title_14'] = 'Utiliser des avatars utilisateur aléat
 $l['mydevel_generate_Admin_Description_14'] = 'Voulez-vous utiliser différents avatars (aléatoires) pour chaque utilisateur?';
 $l['mydevel_generate_Admin_Yes_14'] = 'Oui';
 $l['mydevel_generate_Admin_No_14'] = 'non';
-
 
 //
 

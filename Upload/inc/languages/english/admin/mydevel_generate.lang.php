@@ -92,12 +92,12 @@ $l['mydevel_generate_Admin_Submit_Button_2'] = 'Generate';
 
 //
 
-$l['mydevel_generate_Admin_Form_Title_3'] = 'Generate threads';
+$l['mydevel_generate_Admin_Form_Title_3'] = 'Generate users';
 
 //
 
 $l['mydevel_generate_Admin_Title_12'] = 'Count';
-$l['mydevel_generate_Admin_Description_12'] = 'How many threads would you like to generate?';
+$l['mydevel_generate_Admin_Description_12'] = 'How many users would you like to generate?';
 
 $l['mydevel_generate_Admin_Title_13'] = 'Groups';
 $l['mydevel_generate_Admin_Description_13'] = 'Select the group(s) in which you would like to generate the users.';
@@ -107,9 +107,15 @@ $l['mydevel_generate_Admin_Description_14'] = 'Do you want to use different (ran
 $l['mydevel_generate_Admin_Yes_14'] = 'yes';
 $l['mydevel_generate_Admin_No_14'] = 'no';
 
-
 //
 
 $l['mydevel_generate_Admin_Submit_Button_3'] = 'Generate';
+
+//
+
+$l['mydevel_generate_Admin_Notice_1'] = 'Generated';
+$l['mydevel_generate_Admin_Notice_2'] = 'posts in';
+$l['mydevel_generate_Admin_Notice_3'] = 'threads.';
+$l['mydevel_generate_Admin_Notice_4'] = 'users.';
 
 ?>
